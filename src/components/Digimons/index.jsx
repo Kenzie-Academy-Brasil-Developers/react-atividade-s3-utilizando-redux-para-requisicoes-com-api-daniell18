@@ -21,46 +21,32 @@ function Digimons({ error }) {
       backgroundColor: "white",
       border: "3px solid black",
       borderRadius: "20px",
-      marginLeft: "100px",
     },
     img: {
       borderRadius: "20px",
       width: "150px",
       height: "150px",
     },
-    txt: {
-      fontWeight: "bold",
-    },
   }));
   const classe = useStyles();
   const digi = useSelector((state) => state.digimons);
-  console.log(digi, error);
+  console.log(digi);
   return (
     <>
       <div className={classe.root}>
         {digi.length > 0 ? (
-          digi[digi.length - 1].name === false ? (
-            <div className={classe.root}>
-              <h1>Digi nao econtrado</h1>
-            </div>
+          digi[digi.length - 1].teste ? (
+            <h1>{digi[digi.length - 1].teste}</h1>
           ) : (
-            <div className={classe.root}>
-              {digi[digi.length - 1].name === true ? (
-                <h1>Digi Repetido</h1>
-              ) : (
-                <div className={classe.Paper}>
-                  <img
-                    className={classe.img}
-                    src={digi[digi.length - 1].img}
-                    alt={digi[digi.length - 1].name}
-                  />
-                  <div className={classe.txt}>{digi[digi.length - 1].name}</div>
-                  <div className={classe.txt}>
-                    {digi[digi.length - 1].level}
-                  </div>
-                </div>
-              )}
-            </div>
+            <section className={classe.Paper}>
+              <img
+                className={classe.img}
+                src={digi[digi.length - 1].img}
+                alt={digi[digi.length - 1].name}
+              />
+              <div>{digi[digi.length - 1].name}</div>
+              <div>{digi[digi.length - 1].level}</div>
+            </section>
           )
         ) : (
           ""

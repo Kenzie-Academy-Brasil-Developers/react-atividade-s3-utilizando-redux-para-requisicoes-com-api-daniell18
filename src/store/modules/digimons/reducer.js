@@ -5,27 +5,19 @@ const digimonsReducer = (state = [], action) => {
     case ADD_DIGIMONS:
       const { digimon } = action;
 
-      if (digimon[0]) {
-        const aux = state.map((e) => e.name === digimon[0].name);
+      const aux = state.map((e) => e.name === digimon[0].name);
 
-        if (!aux.includes(true)) {
-          state = [...state, digimon[0]];
-        } else {
-          state = [
-            ...state,
-            {
-              name: true,
-            },
-          ];
-        }
+      if (!aux.includes(true)) {
+        state = [...state, digimon[0]];
       } else {
         state = [
           ...state,
           {
-            name: false,
+            teste: "Digi Pesquisado Repetido",
           },
         ];
       }
+
       return state;
     default:
       return state;

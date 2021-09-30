@@ -37,9 +37,11 @@ const Search = () => {
   const classe = useStyles();
   const dispatch = useDispatch();
   const [input, setInput] = useState("");
-  // const [error, setError] = useState(false);
+  const [error, setError] = useState(false);
   const handleClick = () => {
-    dispatch(addDigimonsThunk(input));
+    setError(false);
+    dispatch(addDigimonsThunk(input, setError));
+    setInput("");
   };
 
   return (
@@ -53,6 +55,7 @@ const Search = () => {
           onChange={(event) => setInput(event.target.value)}
           placeholder="Procure seu Digimon"
         ></input>
+
         <Button
           className={classe.button}
           variant="contained"
@@ -61,6 +64,7 @@ const Search = () => {
           Pesquisar
         </Button>
       </div>
+      {error && <h4>Digi Não encontrado</h4>}
     </div>
   );
 };
