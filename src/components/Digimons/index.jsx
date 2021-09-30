@@ -36,7 +36,7 @@ function Digimons({ error }) {
       <div className={classe.root}>
         {digi.length > 0 ? (
           digi[digi.length - 1].teste ? (
-            <h1>{digi[digi.length - 1].teste}</h1>
+            <h2>{digi[digi.length - 1].teste}</h2>
           ) : (
             <section className={classe.Paper}>
               <img
