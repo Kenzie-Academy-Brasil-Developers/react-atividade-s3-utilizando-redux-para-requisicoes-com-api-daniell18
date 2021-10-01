@@ -7,16 +7,15 @@ function Digimons({ error }) {
       position: "relative",
       height: "100vh",
       display: "flex",
-
       alignItems: "center",
       flexDirection: "column",
-      backgroundColor: "#C03C04",
+      marginTop: "5vh",
     },
     Paper: {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      marginTop: "5vh",
+
       flexDirection: "column",
       backgroundColor: "white",
       border: "3px solid black",
@@ -35,8 +34,8 @@ function Digimons({ error }) {
     <>
       <div className={classe.root}>
         {digi.length > 0 ? (
-          digi[digi.length - 1].teste ? (
-            <h2>{digi[digi.length - 1].teste}</h2>
+          digi[digi.length - 1].repetido ? (
+            <h3>{digi[digi.length - 1].repetido}</h3>
           ) : (
             <section className={classe.Paper}>
               <img

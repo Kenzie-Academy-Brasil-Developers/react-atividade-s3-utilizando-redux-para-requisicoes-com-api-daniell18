@@ -13,7 +13,7 @@ const digimonsReducer = (state = [], action) => {
         state = [
           ...state,
           {
-            teste: "Digi Pesquisado Repetido",
+            repetido: "Digi Pesquisado Repetido",
           },
         ];
       }

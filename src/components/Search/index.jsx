@@ -13,7 +13,6 @@ const Search = () => {
       justifyContent: "center",
       alignItems: "center",
       flexDirection: "column",
-      backgroundColor: "#C03C04",
     },
     button: {
       backgroundColor: "#51DBC9",
@@ -39,9 +38,11 @@ const Search = () => {
   const [input, setInput] = useState("");
   const [error, setError] = useState(false);
   const handleClick = () => {
-    setError(false);
-    dispatch(addDigimonsThunk(input, setError));
-    setInput("");
+    if (input !== "" && input) {
+      setError(false);
+      dispatch(addDigimonsThunk(input, setError));
+      setInput("");
+    }
   };
 
   return (

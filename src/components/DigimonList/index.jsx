@@ -6,9 +6,8 @@ function DigimonList({ error }) {
     root: {
       display: "flex",
       flexDirection: "column",
-      position: "absolute",
-      left: "7px",
-      top: "180px",
+      marginTop: "5vh",
+      marginRight: "10vh",
     },
     list: {
       color: "white",
